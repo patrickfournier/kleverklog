@@ -20,7 +20,7 @@ To use Klever KLog, you need a Kafka server. It is easy to setup. You can run
 one locally, without root privileges. Just follow the `quickstart
 instructions in the Kafka documentation`_.
 
-.. _`quickstart instructions in the Kafka documentation`: http://docutils.sourceforge.net/docs/user/rst/quickstart.html#lists
+.. _`quickstart instructions in the Kafka documentation`: http://kafka.apache.org/documentation.html#quickstart
 
 In your program, send your logs to Kafka:
 
