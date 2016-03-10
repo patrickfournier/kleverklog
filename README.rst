@@ -20,7 +20,7 @@ To use Klever KLog, you need a Kafka server. It is easy to setup. You can run
 one locally, without root privileges. Just follow the `quickstart
 instructions in the Kafka documentation`_.
 
-_`quickstart instructions in the Kafka documentation`: http://docutils.sourceforge.net/docs/user/rst/quickstart.html#lists
+.. _`quickstart instructions in the Kafka documentation`: http://docutils.sourceforge.net/docs/user/rst/quickstart.html#lists
 
 In your program, send your logs to Kafka:
 
@@ -40,19 +40,18 @@ Then, start the log viewer:
 Start your application. The logs should be displayed by Klever KLog,
 colored by log level.
 
-In Klever KLog, you can give the following commands to search and
-navigate your logs:
+In Klever KLog, you can give the following commands:
 
 `mPATTERN`
   Set the match pattern to PATTERN. New log lines containing PATTERN
   will be highlighted.
 
-`rNN`
+`rN`
   Redisplay the last NN log lines, highlighting the ones matching
   the match pattern.
 
 `R`
-  Redisplay the whole logs, highlighting the ones matching
+  Redisplay the whole log, highlighting the lines matching
   the match pattern.
 
 `p`
