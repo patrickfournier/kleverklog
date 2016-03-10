@@ -1,0 +1,4 @@
+Twisted==15.5.0
+colored==1.2.1
+kafka-python==1.0.1
+six==1.10.0
