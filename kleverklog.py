@@ -78,7 +78,7 @@ if __name__ == "__main__":
         if po.poll(0):
             ch = sys.stdin.read(1)
             if ch == 'm':
-                pattern = raw_input('Enter match pattern:')
+                pattern = sys.stdin.readline().rstrip('\n').encode('utf-8')
                 pattern = pattern.rstrip('\n').encode('utf-8')
             elif ch == 'r':
                 offset = sys.stdin.readline().rstrip('\n').encode('utf-8')

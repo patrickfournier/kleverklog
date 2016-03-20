@@ -45,4 +45,3 @@ class KafkaLogService(object):
     def activate(cls, host):
         cls.producer = KafkaProducer(bootstrap_servers=host)
         globalLogPublisher.addObserver(kafka_observer)
-        pass
