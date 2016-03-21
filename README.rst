@@ -35,7 +35,7 @@ Then, start the log viewer:
 
 .. code:: bash
 
-   python -m kleverklog
+   kleverklog all.json
 
 Start your application. The logs should be displayed by Klever KLog,
 colored by log level.

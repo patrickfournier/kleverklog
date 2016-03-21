@@ -26,7 +26,7 @@ match_color = bg('yellow')+attr(1)
 msg_format = "{level} {time}: {msg} [{topic}:{offset}]"
 
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("topic")
     parser.add_argument("-H", "--host", type=str, help="Kafka server and port.",
@@ -99,3 +99,7 @@ if __name__ == "__main__":
                 # FIXME: kafka currently (1.0.1) raises an exception on close
                 # consumer.close()
                 exit()
+
+
+if __name__ == "__main__":
+    main()
