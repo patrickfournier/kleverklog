@@ -11,36 +11,47 @@ Kafka client to search, filter and navigate your logs.
 Usage
 -----
 
-.. note::
-
-   Klever KLog currently only works with twisted logging system but
-   expansion is under way.
-
 To use Klever KLog, you need a Kafka server. It is easy to setup. You can run
 one locally, without root privileges. Just follow the `quickstart
 instructions in the Kafka documentation`_.
 
 .. _`quickstart instructions in the Kafka documentation`: http://kafka.apache.org/documentation.html#quickstart
 
-In your program, send your logs to Kafka:
+Klever KLog supports Python `logging` and Twisted `twisted.logger`
+logging systems. Depending of which one you use, setup is slightly
+different.
+
+If you use Python `logging`:
 
 .. code:: python
 
-    from kleverklog import KafkaLogService
+   import logging
+   from kleverklog.python_logging import KafkaHandler
 
-    # Somewhere in your program initialization
+   logger = logging.getLogger('your logger name')
+   logger.setLevel(logging.DEBUG) # or any other level you like
+   kh = KafkaHandler('localhost:9092')
+   logger.addHandler(kh)
+
+If you are using `twisted.logger`:
+
+.. code:: python
+
+    from kleverklog.twisted_logger import KafkaLogService
+
     KafkaLogService.activate('localhost:9092')
 
-Then, start the log viewer:
+Your program will now send its log entries to Kafka. To view them,
+start the log viewer in a terminal:
 
 .. code:: bash
 
    kleverklog all.json
 
-Start your application. The logs should be displayed by Klever KLog,
+Run your application. The logs should be displayed by Klever KLog,
 colored by log level.
 
-In Klever KLog, you can give the following commands:
+In the Klever KLog viewer, you can give the following commands:
 
 `mPATTERN`
   Set the match pattern to PATTERN. New log lines containing PATTERN
